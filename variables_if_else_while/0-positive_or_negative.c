@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: randomly choose a nubers and print positive or negative
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
