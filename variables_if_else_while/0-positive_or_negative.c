@@ -2,7 +2,11 @@
 #include <time.h>
 #include <stdlib.h>
 
-/* betty style doc for function main goes there */
+/**
+ * main - Entry point
+ *
+ * Description: randomly choose a nubers and print positive or negative
+ */
 int main(void)
 {
 int n;
