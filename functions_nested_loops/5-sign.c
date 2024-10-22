@@ -4,8 +4,8 @@
  * print_sign - checks for sign of a number
  * @n: the nuber to check
  * Return: 1 and print + if n is positive,
- * Return: 0 and prints 0 if n is zero,
- * Return: -1 and prints - if n is negative
+ * 0 and prints 0 if n is zero,
+ * -1 and prints - if n is negative
  */
 
 int print_sign(int n)
