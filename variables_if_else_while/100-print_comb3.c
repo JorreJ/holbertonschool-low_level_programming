@@ -16,5 +16,6 @@ putchar(' ');
 }
 v++;
 }
+putchar('\n');
 return (0);
 }
