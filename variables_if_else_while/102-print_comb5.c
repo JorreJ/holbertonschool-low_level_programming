@@ -9,26 +9,20 @@
 
 int main(void)
 {
-int d1, d2, u1, u2;
-for (d1 = 0; d1 < 9; d1++)
+int tw1, tw2;
+for (tw1 = 0; tw1 < 99; tw1++)
 {
-for (u1 = 0; u1 <= 9; u1++)
+for (tw2 = tw1 + 1; tw2 <= 99; tw2++)
 {
-for (d2 = 0; d2 <= 9; d2++)
-{
-for (u2 = 1; u2 <= 9; u2++)
-{
-putchar(d1 + '0');
-putchar(u1 + '0');
+putchar((tw1 / 10) + '0');
+putchar((tw1 % 10) + '0');
 putchar(' ');
-putchar(d2 + '0');
-putchar(u2 + '0');
-if (d1 < 8 || u1 < 9 || u2 < 9 || d2 < 9)
+putchar((tw2 / 10) + '0');
+putchar((tw2 % 10) + '0');
+if (tw1 != 98 || tw2 != 99)
 {
 putchar(',');
 putchar(' ');
-}
-}
 }
 }
 }
