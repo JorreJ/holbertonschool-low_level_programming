@@ -18,14 +18,14 @@ if (n % 2 == 0)
 {
 for (l = 0; l < (n / 2); l++)
 {
-_putchar(l + str[n / 2]);
+_putchar(str[l + (n / 2)]);
 }
 }
 else
 {
 for (l = 0; l < ((n - 1) / 2); l++)
 {
-_putchar(l + str[(n - 1) / 2]);
+_putchar(str[l + ((n - 1) / 2)]);
 }
 }
 _putchar('\n');
