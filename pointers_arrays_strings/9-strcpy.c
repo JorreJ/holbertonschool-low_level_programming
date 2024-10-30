@@ -1,4 +1,5 @@
 #include "main.h"
+#include "2-strlen.c"
 
 /**
  * *_strcpy - copies the string pointed to by src
@@ -12,12 +13,13 @@
 
 char *_strcpy(char *dest, char *src)
 {
-  while (*src != '\0')
-    {
-      *dest = *src;
-      src++;
-      dest++;
-    }
-  *dest = '\0';
-  return (dest);
+int len;
+int l;
+len = _strlen(src);
+for (l = 0; l < len; l++)
+{
+dest[l] = src[l];
+}
+dest[l] = '\0';
+return (dest);
 }
