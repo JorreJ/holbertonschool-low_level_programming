@@ -25,7 +25,7 @@ else
 {
 for (l = 0; l < ((n - 1) / 2); l++)
 {
-_putchar(str[l + ((n - 1) / 2)]);
+_putchar(str[l + ((n + 1) / 2)]);
 }
 }
 _putchar('\n');
