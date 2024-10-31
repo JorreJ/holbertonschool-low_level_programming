@@ -1,6 +1,5 @@
 #include "main.h"
 #include "2-strlen.c"
-#include <stdio.h>
 
 /**
  * _atoi - converts a string to an integer
@@ -19,10 +18,6 @@ int _atoi(char *s)
       if (s[l] == '-')
 	{
 	  ns++;
-	  if (ns % 2 == 0)
-	    {
-	      ns = 0;
-	    }
 	}
       if (s[l] >= '0' && s[l] <= '9')
 	{
@@ -31,6 +26,7 @@ int _atoi(char *s)
 	      n = ((n * 10) + (s[l] - '0'));
 	      l++;
 	    }
+	  break;
 	}
     }
   if (ns % 2 != 0)
