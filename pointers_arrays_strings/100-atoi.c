@@ -1,5 +1,6 @@
 #include "main.h"
 #include "2-strlen.c"
+#include <stdio.h>
 
 /**
  * _atoi - converts a string to an integer
@@ -21,15 +22,17 @@ if (s[l] == '-')
 ns++;
 if (ns % 2 == 0)
 {
-n = 0;
+ns = 0;
 }
 }
 if (s[l] >= 48 && s[l] <= 57)
 {
+printf("testif: %d, %d, %d ", n, l, ns);
 while (s[l] >= 48 && s[l] <= 57)
 {
 n = ((n * 10) + s[l] - 48);
 l++;
+printf("testwhile: %d, %d, %d ", n, l, ns);
 }
 break;
 }
