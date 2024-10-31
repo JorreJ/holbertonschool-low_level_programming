@@ -11,6 +11,7 @@
 int _atoi(char *s)
 {
 int l;
+int r = 0;
 int n = 0;
 int ns = 0;
 for (l = 0; l < _strlen(s); l++)
@@ -35,7 +36,9 @@ break;
 }
 if (ns % 2 != 0)
 {
-n = n - (n * 2);
+r = n;
+n = n - r;
+n = n - r;
 }
 return (n);
 }
