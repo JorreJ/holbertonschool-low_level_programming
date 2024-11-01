@@ -18,12 +18,21 @@ int _atoi(char *s)
       if (s[l] == '-')
 	{
 	  ns++;
+	  if (ns % 2 == 0)
+	    {
+	      ns = 0;
+	    }
 	}
       if (s[l] >= '0' && s[l] <= '9')
 	{
 	  while (s[l] >= '0' && s[l] <= '9')
 	    {
-	      n = ((n * 10) + (s[l] - '0'));
+	      n = n * 10;
+	      if (n == 2147483640)
+		{
+		  n = n - 1;
+		}
+	      n = n + (s[l] - '0');
 	      l++;
 	    }
 	  break;
@@ -32,6 +41,10 @@ int _atoi(char *s)
   if (ns % 2 != 0)
     {
       n = -n;
+      if (n == -2147483647)
+	{
+	  return (n - 1);
+	}
     }
   return (n);
 }
