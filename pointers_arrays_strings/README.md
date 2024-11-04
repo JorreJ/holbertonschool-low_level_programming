@@ -1,1 +1,1 @@
-pointers, arrays and strings poject
+pointers, arrays and strings pojects
