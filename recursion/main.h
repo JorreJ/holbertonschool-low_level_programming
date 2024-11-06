@@ -7,3 +7,4 @@ int _pow_recursion(int x, int y);
 int _sqrt_recursion(int n);
 int _natural_sqrt(int n, int s);
 int is_prime_number(int n);
+int _factors(int n, int f);
