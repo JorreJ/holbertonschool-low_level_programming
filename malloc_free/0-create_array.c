@@ -24,7 +24,7 @@ if (ar == NULL)
 {
 return (NULL);
 }
-for (l = 0; l < size; l++)
+for (l = 0; l <= size; l++)
 {
 *(ar + l) = c;
 }
