@@ -18,7 +18,7 @@ if (size == 0)
 {
 return (NULL);
 }
-ar = malloc(size * sizeof(char));
+ar = malloc((size + 1) * sizeof(char));
 ar[0] = c;
 if (ar == NULL)
 {
