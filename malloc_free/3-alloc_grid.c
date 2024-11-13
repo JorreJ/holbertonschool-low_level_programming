@@ -28,6 +28,10 @@ for (l = 0; l < height; l++)
 if (*(m + l) == NULL)
 {
 free(m);
+for (c = 0; c < l; c++)
+{
+free(*(m + c));
+}
 return (NULL);
 }
 }
