@@ -27,6 +27,7 @@ for (l = 0; l < height; l++)
 *(m + l) = (int *) malloc(width * sizeof(int));
 if (*(m + l) == NULL)
 {
+free(m);
 return (NULL);
 }
 }
