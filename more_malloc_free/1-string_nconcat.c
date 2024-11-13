@@ -43,6 +43,6 @@ for (l2 = 0; (unsigned int)l2 < n && l2 < len2; l2++)
 {
 *(s3 + l1 + l2) = *(s2 + l2);
 }
-*(s3 + l1 + l2 + 1) = '\0';
+*(s3 + l1 + l2) = '\0';
 return (s3);
 }
