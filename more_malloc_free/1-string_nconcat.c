@@ -14,32 +14,32 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 char *s3;
-int l1, l2;
-if (s1 != NULL && s2 != NULL)
+int l1, l2, len1 = 0, len2 = 0;
+if (s1 != NULL)
 {
-s3 = malloc(sizeof(char) * _strlen(s1) + n + 1);
+len1 = _strlen(s1);
 }
-else if (s1 != NULL && s2 == NULL)
+if (s2 != NULL)
 {
-s3 = malloc(sizeof(char) * _strlen(s1) + 1);
+len2 = _strlen(s2);
 }
-else if (s1 == NULL && s2 != NULL)
+if (n < (unsigned int)len2)
 {
-s3 = malloc(n + 1);
+s3 = malloc(sizeof(char) * len1 + n + 1);
 }
 else
 {
-s3 = malloc(1);
+s3 = malloc(sizeof(char) * len1 + len2 + 1);
 }
 if (s3 == NULL)
 {
 return (NULL);
 }
-for (l1 = 0; l1 < _strlen(s1) && s1 != NULL; l1++)
+for (l1 = 0; l1 < len1; l1++)
 {
 *(s3 + l1) = *(s1 + l1);
 }
-for (l2 = 0; (unsigned int)l2 < n && s2 != NULL; l2++)
+for (l2 = 0; (unsigned int)l2 < n && l2 < len2; l2++)
 {
 *(s3 + l1 + l2) = *(s2 + l2);
 }
