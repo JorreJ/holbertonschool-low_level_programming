@@ -17,7 +17,7 @@ if (min > max)
 {
 return (NULL);
 }
-arr = (int *)malloc(sizeof(int) * (max - min) + 1);
+arr = (int *)malloc(sizeof(int) * (max - min + 1));
 if (arr == NULL)
 {
 return (NULL);
