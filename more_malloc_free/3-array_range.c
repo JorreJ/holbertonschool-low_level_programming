@@ -22,9 +22,9 @@ if (arr == NULL)
 {
 return (NULL);
 }
-for (l = 0; l <= (max - min + 1); l++)
+for (l = 0; min <= max; l++)
 {
-*(arr + l) = min + l;
+*(arr + l) = min++;
 }
 return (arr);
 }
