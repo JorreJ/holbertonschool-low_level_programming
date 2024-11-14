@@ -22,7 +22,7 @@ if (arr == NULL)
 {
 return (NULL);
 }
-for (l = 0; l <= (max - min); l++)
+for (l = 0; l <= (max - min + 1); l++)
 {
 *(arr + l) = min + l;
 }
