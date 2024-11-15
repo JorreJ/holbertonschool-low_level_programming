@@ -1,3 +1,5 @@
+#ifndef STRLEN_C
+#define STRLEN_C
 #include "main.h"
 
 /**
@@ -17,3 +19,4 @@ n++;
 }
 return (n);
 }
+#endif
