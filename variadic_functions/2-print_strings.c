@@ -17,7 +17,7 @@ for (l = 0; l < n; l++)
 argstring = (char *)va_arg(strings, char *);
 if (argstring == NULL)
 {
-printf("nil");
+printf("(nil)");
 }
 else
 {
