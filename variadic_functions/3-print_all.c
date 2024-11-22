@@ -8,7 +8,7 @@
 void print_all(const char * const format, ...)
 {
 int l;
-char *separator = "";
+char *separator = "", *string;
 va_list parameters;
 va_start(parameters, format);
 if (format)
@@ -27,7 +27,12 @@ case 'f':
 printf("%s%f", separator, va_arg(parameters, double));
 break;
 case 's':
-printf("%s%s", separator, va_arg(parameters, char *));
+string = va_arg(parameters, char *);
+if (!string)
+{
+string = "(nil)";
+}
+printf("%s%s", separator, string);
 break;
 default:
 l++;
