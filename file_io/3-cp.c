@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	r = read(ofrom, text, 1024);
 	if (ofrom == -1 || r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	oto = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
