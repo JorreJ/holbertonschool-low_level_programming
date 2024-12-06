@@ -40,11 +40,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (!argv[1])
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
 	text = malloc(sizeof(char) * 1024);
 	if (!text)
 	{
@@ -52,9 +47,9 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	ofrom = open(argv[1], O_RDONLY);
+	r = read(ofrom, text, 1024);
 	oto = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	do {
-		r = read(ofrom, text, 1024);
 		if (ofrom == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -66,6 +61,7 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
+		r = read(ofrom, text, 1024);
 		oto = open(argv[2], O_WRONLY | O_APPEND);
 	} while (r > 0);
 	free(text);
