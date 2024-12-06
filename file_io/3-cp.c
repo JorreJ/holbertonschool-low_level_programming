@@ -12,7 +12,7 @@ void close_func(int file)
 	c = close(file);
 	if (c == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
 		exit(100);
 	}
 }
@@ -48,23 +48,26 @@ int main(int argc, char *argv[])
 	text = malloc(sizeof(char) * 1024);
 	if (!text)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	ofrom = open(argv[1], O_RDONLY);
-	r = read(ofrom, text, 1024);
-	if (ofrom == -1 || r == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
 	oto = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-	w = write(oto, text, r);
-	if (oto == -1 || w == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
-		exit(99);
-	}
+	do {
+		r = read(ofrom, text, 1024);
+		if (ofrom == -1 || r == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		w = write(oto, text, r);
+		if (oto == -1 || w == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+		oto = open(argv[2], O_WRONLY | O_APPEND);
+	} while (r > 0);
 	free(text);
 	close_func(ofrom);
 	close_func(oto);
