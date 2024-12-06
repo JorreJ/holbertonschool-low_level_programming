@@ -32,7 +32,7 @@ void close_func(int file)
 
 int main(int argc, char *argv[])
 {
-	int ofrom, oto, r, w, c1, c2;
+	int ofrom, oto, r, w;
 	char *text;
 
 	if (argc != 3)
